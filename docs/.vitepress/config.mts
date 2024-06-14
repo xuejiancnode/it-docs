@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/it-docs/docs/.vitepress/dist/",
+  base: "/it-docs/dist/",
   title: "IT 工具园",
   head: [['link', {rel: 'icon', href: '/动图.gif'}]],
   description: "记录收集IT技术相关知识",
