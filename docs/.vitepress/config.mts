@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   base: "/it-docs/",
   title: "IT 工具园",
-  head: [['link', {rel: 'icon', href: '/动图.gif'}]],
+  head: [['link', {rel: 'icon', href: '/it-docs/动图.gif'}]],
   description: "记录收集IT技术相关知识",
   themeConfig: {
     logo: {
