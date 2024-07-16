@@ -16,7 +16,7 @@ hero:
       text: 学习文档
       link: /学习文档/文档链接总结/学习资料
     - theme: alt
-      text: 博客
+      text: 技术博客
       link: https://blog.csdn.net/weixin_43809685?spm=1011.2124.3001.5343
 
 features:
