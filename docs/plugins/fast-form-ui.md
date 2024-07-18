@@ -20,7 +20,7 @@ Fast-form-ui 目前还处于开发迭代中。
 | 0.1.102 |  |
 | 0.1.101 |  |
 
-<LinkIcon/>
+<LinkIcon link="https://www.npmjs.com/package/fast-form-ui" />
 
 
 

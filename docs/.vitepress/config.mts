@@ -29,17 +29,18 @@ export default defineConfig({
         ]
       },
       {
-        text: "NPM包",
+        text: "插件扩展",
         items: [
-          {text: "Fast-form-ui", link: "/npm-package/fast-form-ui"}
+          {text: "Fast-form-ui", link: "/plugins/fast-form-ui"},
+          {text: "Jodit Editor", link: "/plugins/jodit"}
         ]
-
       },
       {
         text: "在线工具",
         items: [
           {text: "变量命名", link: "https://unbug.github.io/codelf/"},
           {text: "在线图标库 | iconFont", link: "https://www.iconfont.cn/?spm=a313x.manage_type_myprojects.i3.2.76273a81S0EnHT"},
+          {text: "在线图标库 | REMIX ICON", link: "https://remixicon.com/"},
           {text: "在线正则测试 | 菜鸟工具", link: "https://www.jyshare.com/front-end/854/"},
           {text: "JSON格式化工具", link: "https://www.bejson.com/jsonviewernew/"},
           {text: "Can I Use", link: "https://caniuse.com/"},
@@ -91,10 +92,13 @@ export default defineConfig({
           link: "/学习文档/文档链接总结/学习资料",
         }
       ],
-      "/npm-package/": [
+      "/plugins/": [
         {
           text: "Fast-form-ui",
-          link: "/npm-package/fast-form-ui"
+          link: "/plugins/fast-form-ui"
+        }, {
+          text: "Jodit Editor",
+          link: "/plugins/jodit"
         }
       ]
     },
