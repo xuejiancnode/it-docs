@@ -31,7 +31,7 @@ export default defineConfig({
       {
         text: "插件扩展",
         items: [
-          {text: "Fast-form-ui", link: "/plugins/fast-form-ui"},
+          {text: "FormUI", link: "/plugins/FormUI"},
           {text: "Jodit Editor", link: "/plugins/jodit"}
         ]
       },
@@ -94,8 +94,8 @@ export default defineConfig({
       ],
       "/plugins/": [
         {
-          text: "Fast-form-ui",
-          link: "/plugins/fast-form-ui"
+          text: "FormUI",
+          link: "/plugins/FormUI"
         }, {
           text: "Jodit Editor",
           link: "/plugins/jodit"

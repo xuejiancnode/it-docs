@@ -25,12 +25,18 @@ onMounted(() => {
   const CW = canvasDom.value!.clientWidth, CH = canvasDom.value!.clientHeight;
   scene = new THREE.Scene()
   setBackage(pageData.isDark.value)
+  // 添加鼠标控制器
   camera = new THREE.PerspectiveCamera(50, CW / CH, 0.1, 1000);
   camera.position.set(0, 0, 3)
   camera.updateProjectionMatrix()
   renderer = new THREE.WebGLRenderer()
   renderer.setSize(CW, CH)
   canvasDom.value?.appendChild(renderer.domElement)
+  controls = new OrbitControls(camera, renderer.domElement)
+  // 限制纵向旋转
+  controls.maxPolarAngle = Math.PI / 2; // 最大俯仰角
+  controls.minPolarAngle = Math.PI / 2; // 最小俯仰角
+  controls.update()
   clock = new THREE.Clock()
   
   // loadControls()
