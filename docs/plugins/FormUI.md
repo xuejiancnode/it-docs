@@ -2,25 +2,30 @@
   import LinkIcon from "../components/Vue/LinkIcon.vue"
 </script>
 
-# Fast-form-ui
+# Form
 
 ## 介绍
 
-Fast-form-ui 使用 `Vue3` + `TS` + `Element Plus` 进行封装，通过简单的配置可以快速实现表单提交功能。
+@xuejian/form 使用 `Vue3` + `TS` + `Element Plus` 进行封装，通过简单的配置可以快速实现表单提交功能。
+
+
+## 示例
+[示例](https://xuejiancnode.github.io/form/)
 
 
 
 ## 版本
 
-Fast-form-ui 目前还处于开发迭代中。
+@xuejian/form 目前还处于开发迭代中。
 
 |版本|Tag|
 |--|--|
-| 0.1.103 | Latest |
+| 0.1.104 | Latest |
+| 0.1.103 |  |
 | 0.1.102 |  |
 | 0.1.101 |  |
 
-<LinkIcon link="https://www.npmjs.com/package/fast-form-ui" />
+<LinkIcon link="https://www.npmjs.com/package/@xuejian/form" />
 
 
 
@@ -38,13 +43,13 @@ Fast-form-ui 目前还处于开发迭代中。
 
 ```sh
 # NPM
-$ npm install fast-form-ui --save
+$ npm install @xuejian/form --save
 
 # Yarn 
-$ yarn add fast-form-ui --save
+$ yarn add @xuejian/form --save
 
 # pnpm
-$ pnpm install fast-form-ui --save
+$ pnpm install @xuejian/form --save
 ```
 
 
@@ -58,7 +63,7 @@ $ pnpm install fast-form-ui --save
 import { createApp } from 'vue'
 // import './style.css'
 import App from './App.vue'
-import Form from "fast-form-ui"
+import Form from "@xuejian/form"
 
 const app = createApp(App);
 app.use(Form)
@@ -71,7 +76,7 @@ app.mount('#app')
 </template>
 
 <script setup lang="ts">
-import { FormConfigList } from "fast-form-ui/lib/types/Form";
+import { FormConfigList } from "@xuejian/form/lib/types/Form";
 import { reactive } from "vue";
 
 const model = ref({
@@ -98,7 +103,7 @@ const config = reactive<FormConfigList>([
 </template>
 
 <script setup lang="ts">
-import { Input } from "fast-form-ui"
+import { Input } from "@xuejian/form"
 import { ref } from "vue";
 
 const modelValue = ref('');
@@ -120,7 +125,8 @@ const modelValue = ref('');
 `rules?: FormRules`  &emsp;表单校验规则  
 `disabled?: boolean`  &emsp;是否禁用表单  
 `size?: FormSize`  &emsp;表单大小  
-`columns?: number`  &emsp;表单需要被分成多少列  
+`gutter?: number`  &emsp;表单项的列间距  
+`columns?: number`  &emsp;表单显示列数   
 `autoColumn?: boolean`  &emsp;当为行排列时是否开启自动计算列数，开启后columns无效  
 
 
@@ -151,7 +157,8 @@ const modelValue = ref('');
 [sliderProps: SliderProps](#SliderProps)  &emsp;滑块组件配置参数  
 [switchProps: SwitchProps](#SwitchProps)  &emsp;开关组件配置参数  
 [treeSelectProps: TreeSelectProps](#TreeSelectProps)  &emsp;树级下拉框组件配置参数  
-[uploadProps: uploadProps](#uploadProps)  &emsp;文件上传组件配置参数  
+[uploadProps: UploadProps](#uploadProps)  &emsp;文件上传组件配置参数  
+[autocompleteProps: AutocompleteProps](#AutocompleteProps)  &emsp;文件上传组件配置参数  
 
 
 
@@ -386,8 +393,8 @@ interface TreeSelectPropsBase {
 }
 ```
 
-#### uploadProps
-<span id="uploadProps"></span>
+#### UploadProps
+<span id="UploadProps"></span>
 
 `component: "Upload"`  
 `uploadProps?: UploadPropsBase`
@@ -414,6 +421,38 @@ interface UploadPropsBase {
   response?: UploadResponse,
   prefixIcon?: string | Component
   suffixIcon?: string | Component
+}
+```
+
+
+#### AutocompleteProps
+<span id="AutocompleteProps"></span>
+
+`component: "Autocomplete"`  
+`uploadProps?: AutocompletePropsBase`
+
+```ts
+interface AutocompletePropsBase { 
+  maxlength?: string | number
+  placeholder?: string
+  clearable?: boolean
+  valueKey?: string
+  debounce?: number
+  placement?: Placement
+  triggerOnFocus?: boolean
+  selectWhenUnmatched?: boolean
+  hideLoading?: boolean
+  popperClass?: string
+  teleported?: boolean
+  highlightFirstItem?: boolean
+  fitInputWidth?: boolean
+  suggestionItem?: Component
+  prepend?: string | Component
+  append?: string | Component
+  prefix?: string | Component
+  suffix?: string | Component
+  inputRule?: (value: string) => boolean
+  fetchSuggestions?: (queryString: string, cb: (suggestions: any[]) => void) => void
 }
 ```
 
@@ -460,6 +499,10 @@ interface FieldProps {
 
 `type InputType = 'text' | 'textarea' | 'password'`
 
+### Placement
+
+`type Placement = 'top' | 'top- start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end'`
+
 
 
 ## 枚举
@@ -474,6 +517,7 @@ enum FormEmitEventName {
   change = "change",
   focus = "focus",
   blur = "blur",
+  select = "select",
   beforeUpload = "beforeupload",
   uploadSuccess = "uploadsuccess",
   uploadError = "uploaderror",
