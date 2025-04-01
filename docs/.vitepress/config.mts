@@ -22,8 +22,9 @@ export default defineConfig({
           {
             text: "编程工具",
             items: [
-              {text: "VSCODE", link: "/编程软件/vscode/基础知识"},
-              {text: "Chrome", link: "/编程软件/chrome/基础知识"}
+              {text: "VS Code", link: "/编程软件/vscode/基础知识"},
+              {text: "Chrome", link: "/编程软件/chrome/基础知识"},
+              {text: "Git", link: "/编程软件/git/git指令"},
             ],
           }
         ]
@@ -78,6 +79,15 @@ export default defineConfig({
         {
           text: "基础知识2",
           link: "/编程软件/chrome/基础知识"
+        }
+      ],
+      "/编程软件/git/": [
+        {
+          text: "Git 指令",
+          link: "/编程软件/git/git指令"
+        }, {
+          text: "其他问题",
+          link: "/编程软件/git/其他问题"
         }
       ],
       "/常见问题/": [
